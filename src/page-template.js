@@ -6,13 +6,14 @@ const createTeam = (teamArray) =>{
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group-item heading">${manager.getEmployeeName()}</li>
-                            <li class="list-group-item heading">${manager.getRole()}</li>
+                            <li class="list-group-item heading">🍵${manager.getRole()}</li>
                             <li class="list-group-item">${manager.getEmployeeID()}</li>
-                            <li class="list-group-item">${manager.getEmployeeEmail()}</li>
+                            <li class="list-group-item">Email: <a href="mailto:${manager.getEmployeeEmail()}">${manager.getEmployeeEmail()}</a></li>
                             <li class="list-group-item">${manager.getOffice()}</li>
                         </ul>
                     </div>
                 </div>
+              </div>
     `
   }
   const createEngineer = (engineer) => {
@@ -22,13 +23,14 @@ const createTeam = (teamArray) =>{
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group-item heading">${engineer.getEmployeeName()}</li>
-                            <li class="list-group-item heading">${engineer.getRole()}</li>
+                            <li class="list-group-item heading">💻${engineer.getRole()}</li>
                             <li class="list-group-item">${engineer.getEmployeeID()}</li>
-                            <li class="list-group-item">${engineer.getEmployeeEmail()}</li>
-                            <li class="list-group-item">${engineer.getGitHub()}</li>
+                            <li class="list-group-item">Email: <a href="mailto:${engineer.getEmployeeEmail()}">${engineer.getEmployeeEmail()}</a></li>
+                            <li class="list-group-item"> GitHub:<a href="https://github.com/${engineer.getGitHub()}" target="_blank">${engineer.getGitHub()}</a></li>
                         </ul>
                     </div>
                 </div>
+              </div>  
     `
   }
   const createIntern = (intern) => {
@@ -38,13 +40,14 @@ const createTeam = (teamArray) =>{
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group-item heading">${intern.getEmployeeName()}</li>
-                            <li class="list-group-item heading">${intern.getRole()}</li>
+                            <li class="list-group-item heading">🧑‍🎓${intern.getRole()}</li>
                             <li class="list-group-item">${intern.getEmployeeID()}</li>
-                            <li class="list-group-item">${intern.getEmployeeEmail()}</li>
+                            <li class="list-group-item">Email: <a href="mailto:${intern.getEmployeeEmail()}">${intern.getEmployeeEmail()}</a></li>
                             <li class="list-group-item">${intern.getSchool()}</li>
                         </ul>
                     </div>
                 </div>
+              </div> 
     `
   }
   
