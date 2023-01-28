@@ -7,7 +7,7 @@ const fs = require("fs");
 const renderTeam = require("./src/page-template.js")
 
 const DIST_DIR = path.resolve(__dirname, "dist");
-const distPath = path.join(DIST_DIR, "index.html;");
+const distPath = path.join(DIST_DIR, "index.html");
 
 const teamArray = [];
 const idArray = [];
@@ -211,7 +211,7 @@ function appStart(){
         fs.writeFileSync(distPath, renderTeam(teamArray), 'utf-8')
     };
 
-    createTeam();
+    makeTeam();
 };
 
 

@@ -1,4 +1,4 @@
-const createTeam = (teamArray){
+const createTeam = (teamArray) =>{
   const createManager = (manager) => {
     return `
     <div class="col d-flex justify-content-center">
@@ -52,19 +52,19 @@ const createTeam = (teamArray){
   
   generatedCards.push(
     teamArray
-      .filter((teamMember) => teamMember.getEmployeeRole() === "Manager")
+      .filter((teamMember) => teamMember.getRole() === "Manager")
       .map((manager) => createManager(manager))
       .join("")
   );
   generatedCards.push(
     teamArray
-      .filter((teamMember) => teamMember.getEmployeeRole() === "Engineer")
+      .filter((teamMember) => teamMember.getRole() === "Engineer")
       .map((engineer) => createEngineer(engineer))
       .join("")
   );
   generatedCards.push(
     teamArray
-      .filter((teamMember) => teamMember.getEmployeeRole() === "Intern")
+      .filter((teamMember) => teamMember.getRole() === "Intern")
       .map((intern) => createIntern(intern))
       .join("")
   );
@@ -80,29 +80,25 @@ const createTeam = (teamArray){
 
 
 module.exports = (teamArray) => {
-    return `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link 
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
-            rel="stylesheet" 
-            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
-            crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-        <title>Team Creator</title>
-    </head>
-    <body>
-        <h1>Team generator</h1>
-            <div class="row">
-                ${createTeam(teamArray)}
-            </div>
-    
-    
-    
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Team Creator</title>
+</head>
+  <body>
+    <h1>Team generator</h1>
+      <div class="row">
+        ${createTeam(teamArray)}
+      </div>
     </body>
     </html>
   `;
