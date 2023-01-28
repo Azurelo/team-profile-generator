@@ -4,7 +4,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const fs = require("fs");
-const pageTemplate = require("./src/page-template.js")
+const renderTeam = require("./src/page-template.js")
 
 const DIST_DIR = path.resolve(__dirname, "dist");
 const distPath = path.join(DIST_DIR, "index.html;");
@@ -14,11 +14,6 @@ const idArray = [];
 
 console.log(`This is a team generator. \n use "npm run reset" to reset the generated html file.
 \n Input your team details below`);
-
-function writeToFile(filename, data) {
-    fs.writeFile(filename, data, (err) =>
-    err ? console.error(err) : console.log("You successfully created a README.md file."))
-};
 
 function appStart(){
     function makeTeam(){
@@ -209,8 +204,14 @@ function appStart(){
             makeTeam();
         })
     }
+    function createTeam(){
+        if(!fs.existsSync(DIST_DIR)){
+            fs.mkdirSync(DIST_DIR);
+        }
+        fs.writeFileSync(distPath, renderTeam(teamArray), 'utf-8')
+    };
 
-    makeTeam();
+    createTeam();
 };
 
 
